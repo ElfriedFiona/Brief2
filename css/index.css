@@ -1,0 +1,79 @@
+.btn {
+  border-radius: 50px;
+}
+.btn .bg-primary {
+  --bs-bg-opacity: 100;
+  background-color: #287eb8;
+  margin-right: 10rem;
+}
+.hero {
+  padding-top: 125px; /* Ajuste selon la hauteur de ta navbar */
+}
+h1 {
+  line-height: 1.5em;
+  font-size: 3.5em;
+}
+p {
+  line-height: 2em;
+  font-size: 1.5em;
+  color: gray;
+}
+
+.fonctionnement {
+  margin-top: 8em;
+  margin-right: 15em;
+  margin-left: 15em;
+  margin-bottom: 8em;
+}
+
+.fonctionnement .numéro {
+  border: 2px solid gray;
+  border-radius: 100%;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  margin-top: -5.5em;
+  
+}
+
+/* Animation de l'étape active */
+.step.active .numéro {
+  background-color: #287eb8;
+  color: white;
+  border-color: #287eb8;
+  transform: scale(1.2);
+  transition: all 0.5s ease-in-out;
+}
+
+/* Image animée */
+.step-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10em;
+  height: 200px;
+}
+
+.step-image {
+  display: none;
+  max-width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.evaluation{
+    padding: 5em 0;
+}
+.carousel-inner img {
+    max-height: 500px; /* Ajuste selon ton besoin */
+    width: auto; /* Conserve le ratio */
+    margin: auto; /* Centre l'image */
+}
+
+.FAQ .border-top {
+    width: 50%; /* Ajuste la largeur du border-top */
+    margin: 10px auto; /* Centre horizontalement */
+    border-top: 2px solid black; /* Épaisseur et couleur de la bordure */
+    padding-top: 10px; /* Espace entre la bordure et le texte */
+}
+
