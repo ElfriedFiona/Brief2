@@ -1,0 +1,57 @@
+
+body {
+    background-color: #f8f9fa; /* Couleur de fond claire */
+}
+
+.container {
+    margin-top: 50px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.card {
+    margin-bottom: 20px;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.btn-link {
+    font-weight: 500;
+    color: #343a40;
+    text-decoration: none;
+}
+
+.btn-link:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+}
+.faq-toggle {
+    font-size: 1.2em;
+    transition: transform 0.2s ease;
+    float: right;
+    
+}
+/* Style pour la flèche rotative */
+.faq-question.active .faq-toggle {
+    transform: rotate(180deg);
+}
