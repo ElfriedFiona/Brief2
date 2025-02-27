@@ -87,7 +87,8 @@
 /* Track du carrousel */
 .carousel-track {
     display: flex;
-    gap: 50px;
+    gap: 100px;
+    margin-left: 70px;
 }
 
 /* Images du carrousel */
