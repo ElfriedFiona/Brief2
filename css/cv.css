@@ -9,15 +9,20 @@
     border: 1px solid #ddd; 
 }
 
-
-.cv-container {
-    border: 1px solid #ddd;
-    padding: 20px;
-    background: #fff;
-    width: 100%;
-    max-width: 600px;
-    margin: 20px auto;
+.cv-section1 h2{
+    border-bottom: 1px solid #ccc;
 }
+
+ .cv-section1 {
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-bottom: 10px;
+    background-color: white;
+}
+
+.cv-section h2{
+    border-bottom: 1px solid #ccc;
+} 
 
 .cv-title {
     text-align: center;
@@ -25,15 +30,6 @@
     font-weight: bold;
 }
 
-.cv-section {
-    margin-top: 20px;
-    border-top: 1px solid #ccc;
-    padding-bottom: 10px;
-}
-
-.cv-section h2{
-    border-bottom: 1px solid #ccc;
-}
 
 .cv-info {
     display: flex;
@@ -47,3 +43,119 @@
     object-fit: cover;
 }
 
+/* Barre en bas */
+.preview-navbar {
+    position: absolute;
+    bottom: 0;
+    width: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+/* Bouton dropdown */
+.toggle-carousel-btn {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.toggle-carousel-btn:hover {
+    background: linear-gradient(45deg, #0056b3, #007bff);
+}
+
+/* Conteneur du carrousel */
+.carousel-container {
+    position: absolute;
+    bottom: 50px;
+    width: 50%;
+    height: 30%;
+    background: white;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+    white-space: nowrap;
+    display: none;
+    padding: 10px;
+}
+
+/* Track du carrousel */
+.carousel-track {
+    display: flex;
+    gap: 50px;
+}
+
+/* Images du carrousel */
+.carousel-track img {
+    height: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.carousel-track img:hover {
+    transform: scale(1.1);
+}
+
+
+.cv-container {
+    max-width: 900px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+.cv-template .header {
+    background: #572f6c;
+    color: white;
+    padding: 20px;
+    margin-left: -13px;
+    text-align: center;
+    border-left: 50px solid #333;
+    border-top: 50px solid #333;
+    padding-left: 50px;
+}
+.header img {
+    width: 120px;
+    border-radius: 50%;
+    border: 4px solid white #333;
+
+}
+.header h1 {
+    font-size: 2rem;
+    margin-top: 10px;
+}
+.contact-info {
+    font-size: 0.9rem;
+}
+.left-section {
+    background: #333;
+    color: white;
+    padding: 20px;
+}
+.left-section h3 {
+    font-size: 1.2rem;
+    border-bottom: 2px solid #a500c1;
+    padding-bottom: 5px;
+}
+.right-section {
+    padding: 20px;
+}
+.section-title {
+    background: #a500c1;
+    color: white;
+    padding: 5px 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.experience-item {
+    margin-bottom: 15px;
+}
+.experience-item h4 {
+    font-size: 1.1rem;
+    color: #572f6c;
+}

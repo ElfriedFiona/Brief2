@@ -209,91 +209,290 @@
                 <!-- Colonne de prévisualisation -->
                 <div class="col-md-6 justify-content-center text-start">
                     <!-- <h2>Prévisualisation</h2>
-                    <div id="cv-preview" class="cv-container"> -->
-                        <h1 class="cv-title fw-bold fs-1">Curriculum vitae</h1>
+                    <div  class="cv-container"> -->
+                        <div id="cv-preview"></div>
+                        
+                                <!-- Barre en bas avec bouton -->
+<div class="preview-navbar">
+    <button id="toggle-carousel" class="toggle-carousel-btn">
+        <i class="bi bi-chevron-up"></i> Choisir un modèle
+    </button>
+</div>
+
+<!-- Carrousel d'images -->
+<div id="carousel-container" class="carousel-container">
+    <div class="carousel-track">
+        <img src="assets/images/modele1.jpg" class="cv-selector" alt="Modèle 1" data-template="cv-template-1">
+        <img src="assets/images/modele2.jpg" class="cv-selector" alt="Modèle 2" data-template="cv-template-2">
+        <img src="assets/images/modele3.jpg" class="cv-selector" alt="Modèle 3" data-template="cv-template-3">
+        <img src="assets/images/modele4.jpg" class="cv-selector" alt="Modèle 4" data-template="cv-template-4">
+        <img src="assets/images/modele5.jpg" class="cv-selector" alt="Modèle 5" data-template="cv-template-5">
+    </div>
+</div>
+
+                               <!-- Modèles de CV cachés -->
+
+    
+<div id="cv-templates" style="display: none; " >
+    <!-- Modèle 1 -->
+    <div id="cv-template-1" class="cv-template">
+        <h1 class="cv-title fw-bold fs-1">CV Professionnel</h1>
+        <div class="cv-container">
+            <div class="row">
+              <div class="col-md-12 text-center mb-4">
+                <div class="py-2">
+                    <img id="cv-photo" src="assets/images/camera.png" alt="Photo de profil" 
+                                                         style="width: 150px; height: 150px; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="py-5">
+                    <h1 ><span id="cv-name"></span></h1>
+                <p><span id="cv-email"></span> | <span id="cv-phone"></span> | id="cv-address"</p>
+                
+                </div>
+                
+              </div>
+            </div>
+        
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-4">
+                  <h2>Profil</h2>
+                    <p id="cv-description">Votre description...</p>
+                </div>
+        
+                <div class="mb-4">
+                  <h2>Expérience professionnelle</h2>
+        
+                  <div class="mb-3">
+                    <p id="cv-experience">Votre expérience...</p>
+                  </div>
+                </div>
+                <div class="mb-4">
+                <h2>Langues</h2>
+                <ul id="cv-languages"></ul>
+                </div>
+              </div>
+            
+        
+              <div class="left col-md-6">
+                <div class="mb-4">
+                  <h2>Informations personnelles</h2>
+                  <table style="width: 100%; border-collapse: separate; border-spacing: 10px 15px;">
                     
-                        <div class="cv-section">
-                            <h2 class="fw-bold">Informations personnelles</h2>
-                            <div class="cv-info d-flex">
+                    <tr class="fs-5">
+                        <td><strong>Âge</strong></td>
+                        <td><span id="cv-age"></span></td>
+                    </tr>
+                    <tr class="fs-5">
+                        <td><strong>Poste</strong></td>
+                        <td><span id="cv-poste"></span></td>
+                    </tr>
+                    <tr class="fs-5">
+                        <td><strong>Situation Actuelle</strong></td>
+                        <td><span id="cv-status">situation actuelle</span></td>
+                    </tr>
+                   
+                    <tr class="fs-5">
+                        <td><strong>Sexe</strong></td>
+                        <td><span id="cv-gender">Sexe</span></td>
+                    </tr>
+                </table>
+            </div>
+        
+                <div class="mb-4">
+                  <h2>Formation</h2>
+                  <div class="mb-3">
+                    <p id="cv-education">Votre formation...</p>
+                  </div>
+                </div>
+        
+                <div class="mb-4">
+                  <h2>Compétences</h2>
+                  <ul id="cv-skills"></ul>
+                </div>
 
-                                <table style="width: 100%; border-collapse: separate; border-spacing: 10px 15px;">
-                                    <tr class="fs-5">
-                                        <td ><strong>Nom</strong></td>
-                                        <td><span id="cv-name"></span></td>
-                                        <td rowspan="8" style="text-align: center; vertical-align: middle;">
-                                            <img id="cv-photo" src="assets/images/camera.png" alt="Photo de profil" 
-                                                 style="width: 150px; height: 150px; object-fit: cover; border-radius: 10px;">
-                                        </td>
-                                    </tr>
-                                    <tr class="fs-5">
-                                        <td><strong>Âge</strong></td>
-                                        <td><span id="cv-age"></span></td>
-                                    </tr>
-                                    <tr class="fs-5">
-                                        <td><strong>Poste</strong></td>
-                                        <td><span id="cv-poste"></span></td>
-                                    </tr>
-                                    <tr class="fs-5">
-                                        <td><strong>Situation Actuelle</strong></td>
-                                        <td><span id="cv-status">situation actuelle</span></td>
-                                    </tr>
-                                    <tr class="fs-5">
-                                        <td><strong>Adresse e-mail</strong></td>
-                                        <td><span id="cv-email"></span></td>
-                                    </tr>
-                                    <tr class="fs-5">
-                                        <td><strong>Numéro de téléphone</strong></td>
-                                        <td><span id="cv-phone"></span></td>
-                                    </tr>
-                                    <tr class="fs-5">
-                                        <td><strong>Adresse</strong></td>
-                                        <td><span id="cv-address">Votre adresse</span></td>
-                                    </tr>
-                                    <tr class="fs-5">
-                                        <td><strong>Sexe</strong></td>
-                                        <td><span id="cv-gender">Non spécifié</span></td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
+                <div class="mb-4">
+                    <h2>Loisirs</h2>
+                    <ul id="cv-hobbies"></ul>
+                </div>
 
-                        <div class="cv-section">
-                            <h2 class="fw-bold ">Profil</h2>
-                            <p id="cv-description">Votre description...</p>
-                        </div>
+                  <div class="mb-4">
+                    <h2>Références</h2>
+                    <ul id="cv-references"></ul>
+                  </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    <!-- modele 3 -->
+    <div id="cv-template-3" class="cv-template">
+        <h1 class="cv-title fw-bold fs-1">CV Elegant</h1>
+        <div class="cv-container">
+            <!-- HEADER -->
+            <div class="d-flex header">
+        
+                <div class="align-items-center justify-content-center mx-3">
+                    <img id="cv-photo" src="assets/images/camera.png" alt="Photo de profil">
+                </div>
+                <div>
+                    <h1><span id="cv-name"></span></h1>
+                <div class="contact-info d-flex">
+                    <p >✉️ <span id="cv-email"></span></p>
+                    <p > 📞 <span id="cv-phone"></span></p>
+                    <p >📍 <span id="cv-address"></span></p>
+                    <p >✉️ <span id="cv-gender"></span></p>
+                </div>
+                <div class="contact-info d-flex">
+                    <p ><span id="cv-age"></span>ans</p>
+                    <p ><span id="cv-poste"></span> </p>
+                    <p ><span id="cv-status"></span></p>
+                </div>
+                </div>
+                
+            </div>
+        
+            <div class="row">
+                <!-- Colonne Gauche -->
+                <div class="col-md-4 left-section cv-section">
+                    <h3>COMPÉTENCES</h3>
+                    <ul id="cv-skills">
+                        
+                    </ul>
+        
+                    <h3>LOISIRS</h3>
+                    <ul id="cv-hobbies"></ul>>
+                        
+                    </ul>
 
-                        <div class="cv-section">
-                            <h2 class="fw-bold">Formation</h2>
-                            <p id="cv-education">Votre formation...</p>
-                        </div>
+                    <h3>REFERENCES</h3>
+                    <ul id="cv-references"></ul>>
+                        
+                    </ul>
+
+                    <h3>LANGUES</h3>
+                    <ul id="cv-languages"></ul>>
+                        
+                    </ul>
+                </div>
+        
+                <!-- Colonne Droite -->
+                <div class="col-md-8 right-section cv-section">
+                    <div class="section-title">PROFIL</div>
+                    <p id="cv-description">Votre description...</p>
+
+                    <div class="section-title">FORMATION</div>
+                    <p id="cv-education">Votre formation...</p>
+        
+                    <div class="section-title">EXPÉRIENCE PROFESSIONNELLE</div>
                     
-                        <div class="cv-section">
-                            <h2 class="fw-bold ">Expérience professionnelle</h2>
-                            <p id="cv-experience">Votre expérience...</p>
-                        </div>
-
-                        <div class="cv-section">
-                            <h2 class="fw-bold">Compétences</h2>
-                            <ul id="cv-skills"></ul>
-                        </div>
-                        
-                        <div class="cv-section">
-                            <h2 class="fw-bold">Loisirs</h2>
-                            <ul id="cv-hobbies"></ul>
-                        </div>
-                        
-                        <div class="cv-section">
-                            <h2 class="fw-bold">Références</h2>
-                            <ul id="cv-references"></ul>
-                        </div>
-                        
-                        <div class="cv-section">
-                            <h2 class="fw-bold">Langues</h2>
-                            <ul id="cv-languages"></ul>
-                        </div>
-                        
-                    </div>
+                    <p id="cv-experience">Votre expérience...</p>
                     
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modèle 2
+    <div id="cv-template-2" class="cv-template">
+        <h1 class="cv-title text-center">CV Professionnel</h1>
+        <div class="cv-info">
+            <h3><span class="cv-name"></span></h3>
+            <p><span class="cv-poste"></span> - <span class="cv-email"></span></p>
+        </div>
+    </div> -->
+
+    <!-- modele 5 -->
+    <div id="cv-template-5" class="cv-template">
+    <h1 class="cv-title fw-bold fs-1">Curriculum vitae</h1>
+
+    <div class="cv-section1">
+        <h2 class="fw-bold">Informations personnelles</h2>
+        <div class="cv-info d-flex">
+
+            <table style="width: 100%; border-collapse: separate; border-spacing: 10px 15px;">
+                <tr class="fs-5">
+                    <td ><strong>Nom</strong></td>
+                    <td><span id="cv-name"></span></td>
+                    <td rowspan="8" style="text-align: center; vertical-align: middle;">
+                        <img id="cv-photo" src="assets/images/camera.png" alt="Photo de profil" 
+                             style="width: 150px; height: 150px; object-fit: cover; border-radius: 10px;">
+                    </td>
+                </tr>
+                <tr class="fs-5">
+                    <td><strong>Âge</strong></td>
+                    <td><span id="cv-age"></span></td>
+                </tr>
+                <tr class="fs-5">
+                    <td><strong>Poste</strong></td>
+                    <td><span id="cv-poste"></span></td>
+                </tr>
+                <tr class="fs-5">
+                    <td><strong>Situation Actuelle</strong></td>
+                    <td><span id="cv-status">situation actuelle</span></td>
+                </tr>
+                <tr class="fs-5">
+                    <td><strong>Adresse e-mail</strong></td>
+                    <td><span id="cv-email"></span></td>
+                </tr>
+                <tr class="fs-5">
+                    <td><strong>Numéro de téléphone</strong></td>
+                    <td><span id="cv-phone"></span></td>
+                </tr>
+                <tr class="fs-5">
+                    <td><strong>Adresse</strong></td>
+                    <td><span id="cv-address">Votre adresse</span></td>
+                </tr>
+                <tr class="fs-5">
+                    <td><strong>Sexe</strong></td>
+                    <td><span id="cv-gender">Sexe</span></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="cv-section">
+        <h2 class="fw-bold ">Profil</h2>
+        <p id="cv-description">Votre description...</p>
+    </div>
+
+    <div class="cv-section">
+        <h2 class="fw-bold">Formation</h2>
+        <p id="cv-education">Votre formation...</p>
+    </div>
+
+    <div class="cv-section">
+        <h2 class="fw-bold ">Expérience professionnelle</h2>
+        <p id="cv-experience">Votre expérience...</p>
+    </div>
+
+    <div class="cv-section">
+        <h2 class="fw-bold">Compétences</h2>
+        <ul id="cv-skills"></ul>
+    </div>
+    
+    <div class="cv-section">
+        <h2 class="fw-bold">Loisirs</h2>
+        <ul id="cv-hobbies"></ul>
+    </div>
+    
+    <div class="cv-section">
+        <h2 class="fw-bold">Références</h2>
+        <ul id="cv-references"></ul>
+    </div>
+    
+    <div class="cv-section">
+        <h2 class="fw-bold">Langues</h2>
+        <ul id="cv-languages"></ul>
+    </div>
+</div>
+     </div>
+    
+    
+
+</div>
+                        
+</div>
+ 
                 </div>
             </div>
         </div>
