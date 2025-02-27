@@ -1,0 +1,213 @@
+
+  .hero-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(252, 252, 252, 0.808);
+    background-position: center;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+  
+  .hero p {
+    font-size: 1.2em;
+  }
+  
+  /* Galerie de CV */
+  .cv-gallery {
+    padding: 20px;
+  }
+  
+  .cv-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .cv-item {
+    width: 30%; /* Ajustez pour contrôler la largeur des CV */
+    margin: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cv-item img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .cv-details {
+    padding: 10px;
+  }
+  
+  .cv-details h2 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+  }
+  
+  .cv-details p {
+    font-size: 1em;
+    margin-bottom: 5px;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .hero {
+      height: 400px;
+    }
+  
+    .hero h1 {
+      font-size: 2.5em;
+    }
+  
+    .hero p {
+      font-size: 1.1em;
+    }
+  
+    .cv-item {
+      width: 45%; /* Deux colonnes sur tablette */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .cv-item {
+      width: 90%; /* Une colonne sur mobile */
+    }
+  }
+  .image-container {
+    position: relative;
+    display: inline-block; /* Pour que le conteneur s'adapte à la taille de l'image */
+  }
+  
+  .interactive-button {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0; /* Initialement caché */
+    transition: opacity 0.3s ease; /* Animation de fondu */
+    /* Autres styles pour votre bouton */
+    
+    padding: 10px 10px;
+    background-color: rgb(0, 102, 255);
+    color: #ccc;
+    border: none;
+   border-radius: 25px;
+
+  }
+  
+  .image-container:hover .interactive-button {
+    opacity: 1; /* Apparaît au survol de l'image */
+  }
+
+  .lien{
+    text-decoration: none;
+  }
+  b{
+    text-decoration: none;
+    color: #ccc;
+    
+
+  }
+
+  a{
+    text-decoration: none;
+    color: #182ef5;
+  }
+  
+  .faq-container {
+    width: 80%;
+    margin: 20px auto;
+    
+    padding: 20px;
+  }
+  
+  .faq-item {
+    margin-bottom: 10px;
+ 
+  }
+  
+  .faq-question {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between; /* Align question and toggle */
+    align-items: center; /* Vertically center */
+    font-size: 20px;
+    opacity: 0.6; /* de transparence */
+  }
+  
+  .faq-toggle {
+    font-size: 1.2em;
+    transition: transform 0.2s ease; /* Smooth rotation */
+  }
+  
+  .faq-answer {
+    padding: 10px;
+    display: none; /* Initially hidden */
+  }
+  
+  .faq-answer.show {
+    display: block; /* Show when active */
+  }
+  .text{
+    text-align: center;
+   
+  }
+
+ 
+
+.container {
+    text-align: center; /* Centre le texte et le bouton */
+    background-color: #fffefe;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+button {
+    background-color: #007bff; /* Couleur de fond bleue */
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Animation de transition */
+}
+
+button:hover {
+    background-color: #0056b3; /* Couleur de fond bleue plus foncée au survol */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 12px 25px;
+    }
+}
+  
