@@ -1,9 +1,17 @@
 .faq-container {
     width: 80%;
     margin: 20px auto;
-    
+    padding-top: 125px; /* Ajuste selon la hauteur de ta navbar */
     padding: 20px;
   }
+.btn {
+  border-radius: 50px;
+}
+.btn .bg-primary {
+  --bs-bg-opacity: 100;
+  background-color: #287eb8;
+  margin-right: 10rem;
+}
   
   .faq-item {
     margin-bottom: 10px;
