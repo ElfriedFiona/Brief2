@@ -149,6 +149,67 @@ document.addEventListener("DOMContentLoaded", function () {
         container.appendChild(div);
     }
 
+    function generateAndDownloadCV() {
+        if (!selectedTemplate) {
+            alert("Veuillez sélectionner un modèle de CV.");
+            return;
+        }
+    
+        const templateElement = document.getElementById(selectedTemplate).cloneNode(true);
+        templateElement.style.display = "block";
+    
+        // Injecter les données dynamiques (sections)
+        ["education-list", "experience-list", "skills-list", "hobbies-list", "references-list", "langues"].forEach(sectionId => {
+            const cvSectionId = {
+                "education-list": "cv-education",
+                "experience-list": "cv-experience",
+                "skills-list": "cv-skills",
+                "hobbies-list": "cv-hobbies",
+                "references-list": "cv-references",
+                "langues": "cv-languages"
+            };
+    
+            const cvSection = templateElement.querySelector(`#${cvSectionId[sectionId]}`);
+            if (cvSection) {
+                cvSection.innerHTML = document.getElementById(cvSectionId[sectionId]).innerHTML;
+            }
+        });
+    
+        // Injecter les données statiques
+        templateElement.querySelector("#cv-name").textContent = document.getElementById("cv-name").textContent;
+        templateElement.querySelector("#cv-age").textContent = document.getElementById("cv-age").textContent;
+        templateElement.querySelector("#cv-poste").textContent = document.getElementById("cv-poste").textContent;
+        templateElement.querySelector("#cv-status").textContent = document.getElementById("cv-status").textContent;
+        templateElement.querySelector("#cv-description").textContent = document.getElementById("cv-description").textContent;
+        templateElement.querySelector("#cv-email").textContent = document.getElementById("cv-email").textContent;
+        templateElement.querySelector("#cv-phone").textContent = document.getElementById("cv-phone").textContent;
+        templateElement.querySelector("#cv-address").textContent = document.getElementById("cv-address").textContent;
+        templateElement.querySelector("#cv-gender").textContent = document.getElementById("cv-gender").textContent;
+        templateElement.querySelector("#cv-photo").src = document.getElementById("cv-photo").src;
+    
+        const previewWindow = window.open("", "_blank");
+        previewWindow.document.open();
+        previewWindow.document.write(`
+            <html>
+            <head>
+                <title>Prévisualisation du CV</title>
+                ${document.head.innerHTML}
+            </head>
+            <body>
+                ${templateElement.outerHTML}
+                <button id="downloadPdfBtn">Télécharger en PDF</button>
+                 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+                <script>
+                    document.getElementById('downloadPdfBtn').addEventListener('click', function() {
+                        html2pdf().from(document.body).save('cv.pdf');
+                    });
+                </script>
+            </body>
+            </html>
+        `);
+        previewWindow.document.close();
+    }
+
     function updateCVSection(containerId) {
         const sectionId = {
             "education-list": "cv-education",
@@ -341,6 +402,24 @@ function updatePreview() {
     preview.appendChild(templateElement);
 }
 
+const templates = document.querySelectorAll(".cv-selector");
+const preview = document.getElementById("cv-preview");
+
+let defaultTemplate = "cv-template-1"; // Définir un modèle par défaut
+let selectedTemplate = localStorage.getItem("selectedTemplate") || defaultTemplate; // Charger ou utiliser le modèle par défaut
+
+templates.forEach(template => {
+    template.addEventListener("click", function () {
+        selectedTemplate = this.dataset.template;
+        localStorage.setItem("selectedTemplate", selectedTemplate); // Sauvegarder dans localStorage
+        updatePreview();
+    });
+});
+
+document.querySelector(".btn.bg-primary").addEventListener("click", function () {
+    generateAndDownloadCV();
+});
+
 document.getElementById("firstName").addEventListener("input", function() {
     updateFullName();
     updatePreview();
@@ -400,29 +479,11 @@ document.getElementById("profilePic").addEventListener("change", function(event)
     updatePreview();
 });
 
-const templates = document.querySelectorAll(".cv-selector");
-const preview = document.getElementById("cv-preview");
-
-let defaultTemplate = "cv-template-5";
-
-let selectedTemplate = localStorage.getItem("selectedTemplate") || defaultTemplate;
-
-templates.forEach(template => {
-    template.addEventListener("click", function () {
-        selectedTemplate = this.dataset.template;
-        localStorage.setItem("selectedTemplate", selectedTemplate);
-        updatePreview();
-    });
-});
-
 document.querySelectorAll("#cv-form input").forEach(input => {
     input.addEventListener("input", updatePreview);
 });
 
-if (!selectedTemplate && templates.length > 0) {
-    selectedTemplate = defaultTemplate;
-    updatePreview();
-}
+updatePreview();
 });
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -522,6 +583,7 @@ document.getElementById("toggle-carousel").addEventListener("click", function ()
         carousel.style.display = "flex";
     }
 });
+
 
 
 
