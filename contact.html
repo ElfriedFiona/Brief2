@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="css/Contact.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Contact</h1>
+        <p>Vous avez une question, une remarque, une réclamation ou une suggestion ? Veuillez lire la foire aux questions avant de nous contacter. Si vous ne trouvez pas de réponse à votre question, veuillez utiliser le formulaire ci-dessous.</p>
+        <form action="#" method="post">
+            <label for="sujet">Sujet:</label>
+            <select name="sujet" id="sujet">
+                <option value="question">Question</option>
+                <option value="remarque">Remarque</option>
+                <option value="reclamation">Réclamation</option>
+                <option value="suggestion">Suggestion</option>
+            </select>
+            <label for="nom">Nom:</label>
+            <input type="text" name="nom" id="nom" required>
+            <label for="email">Adresse e-mail:</label>
+            <input type="email" name="email" id="email" required>
+            <label for="message">Question ou remarque:</label>
+            <textarea name="message" id="message" required></textarea>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <button type="submit" class="button">Envoyer</button>
+        </form>
+    </div>
+</body>
+</html>
