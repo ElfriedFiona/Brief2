@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/cv.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg bg-black fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white ms-3" href="index.html">
+                    <img src="assets/images/logo.png" alt="Logo" width="100" height="100" class="d-inline-block"> WebNova
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-center fs-4">
+                        <li class="nav-item">
+                            <a class="nav-link text-white ms-3" href="#" id="userName">CV de <span id="cv-name"></span></a>
+                        </li>
+                    </ul>
+                    <div class="d-flex">
+                        <button class="btn bg-primary text-white mx-3 p-3 fs-4" type="submit">
+                            <i class="bi bi-download"></i> Télécharger
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <section class="form">
+        <div class="container-fluid bg-body-tertiary text-center py-5">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-6 justify-content-center text-start  colonne1">
+                    <div class="accordion accordion-flush" id="formAccordion">
+                        <form id="cv-form" class="was-validated">
+                            <!-- Accordion Informations personnelles -->
+                            <div class="accordion-item border-top">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#form1">
+                                        <h2 class="fw-bold fs-3">Informations personnelles</h2>
+                                    </button>
+                                </h2>
+                                <div id="form1" class="accordion-collapse collapse" data-bs-parent="#formAccordion">
+                                    <div class="accordion-body">
+                                        <div class="mb-3">
+                                            <label for="profilePic" class="form-label">Photo</label>
+                                            <div id="photo-upload-container" class="border border-secondary rounded d-flex justify-content-center align-items-center"
+                                                 style="width: 100px; height: 100px; overflow: hidden; cursor: pointer; position: relative;">
+                                                <img id="photo-preview" src="assets/images/camera.png" alt="Cliquez pour choisir une photo"
+                                                     style="width: 100%; height: 100%; object-fit: cover;">
+                                            </div>
+                                            <input type="file" id="profilePic" accept="image/*" style="display: none;">
+                                            <p id="imageMessage"></p>
+                                            <button type="button" id="resetImage">Réinitialiser l'image</button>
+                                            
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label for="firstName" class="form-label">Nom</label>
+                                            <input type="text" class="form-control" id="firstName" placeholder="Nom requis" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="lastName" class="form-label">Prénom</label>
+                                            <input type="text" class="form-control" id="lastName" placeholder="Prénom requis" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="age" class="form-label">Âge</label>
+                                            <input type="number" class="form-control" id="age" placeholder="Âge requis" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label>Sexe</label>
+                                            <div class="form-check">
+                                                <input type="radio" class="form-check-input" id="male" name="gender" value="Homme" required>
+                                                <label class="form-check-label" for="male">Homme</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="radio" class="form-check-input" id="female" name="gender" value="Femme" required>
+                                                <label class="form-check-label" for="female">Femme</label>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="jobTitle" class="form-label">Titre du poste</label>
+                                            <input type="text" class="form-control" id="jobTitle" placeholder="Titre du poste" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="currentStatus" class="form-label">Situation actuelle</label>
+                                            <input type="text" class="form-control" id="currentStatus" placeholder="Situation actuelle" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="" class="form-label">Description</label>
+                                            <textarea class="form-control" id="description" placeholder="Parlez de vous..." required></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Email</label>
+                                            <input type="email" class="form-control" id="email" placeholder="Email requis" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Téléphone</label>
+                                            <input type="number" class="form-control" id="phone" placeholder="Numéro requis" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Adresse</label>
+                                            <input type="text" class="form-control" id="address" placeholder="Adresse requise" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <!-- Accordion Expériences professionnelles -->
+                            <div class="accordion-item border-top">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#form2">
+                                        <h2 class="fw-bold fs-3">Expériences professionnelles</h2>
+                                    </button>
+                                </h2>
+                                <div id="form2" class="accordion-collapse collapse" data-bs-parent="#formAccordion">
+                                    <div class="accordion-body">
+                                        <div id="experience-list"></div>
+                                        <button type="button" class="btn btn-primary" id="add-experience">Ajouter une expérience</button>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <!-- Accordion Formations -->
+                            <div class="accordion-item border-top">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#form3">
+                                        <h2 class="fw-bold fs-3">Formations</h2>
+                                    </button>
+                                </h2>
+                                <div id="form3" class="accordion-collapse collapse" data-bs-parent="#formAccordion">
+                                    <div class="accordion-body">
+                                        <div id="education-list"></div>
+                                        <button type="button" class="btn btn-primary" id="add-education">Ajouter une formation</button>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <!-- Accordion Compétences -->
+                            <div class="accordion-item border-top">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#form4">
+                                        <h2 class="fw-bold fs-3">Compétences</h2>
+                                    </button>
+                                </h2>
+                                <div id="form4" class="accordion-collapse collapse" data-bs-parent="#formAccordion">
+                                    <div class="accordion-body">
+                                        <div id="skills-list"></div>
+                                        <button type="button" class="btn btn-primary" id="add-skills">Ajouter une compétence</button>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <!-- Accordion Centres d'intérêt -->
+                            <div class="accordion-item border-top">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#form5">
+                                        <h2 class="fw-bold fs-3">Centres d’intérêt</h2>
+                                    </button>
+                                </h2>
+                                <div id="form5" class="accordion-collapse collapse" data-bs-parent="#formAccordion">
+                                    <div class="accordion-body">
+                                        <div id="hobbies-list"></div>
+                                        <button type="button" class="btn btn-primary" id="add-hobbies">Ajouter vos loisirs</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Références -->
+                            <div class="accordion-item border-top">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#form6">
+                                        <h2 class="fw-bold fs-3">Références</h2>
+                                    </button>
+                                </h2>
+                                <div id="form6" class="accordion-collapse collapse" data-bs-parent="#formAccordion">
+                                    <div class="accordion-body">
+                                        <div id="references-list"></div>
+                                        <button type="button" class="btn btn-primary" id="add-references">Ajouter une référence</button>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <!-- Langues -->
+                            <div class="accordion-item border-top">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#form7">
+                                        <h2 class="fw-bold fs-3">Langues</h2>
+                                    </button>
+                                </h2>
+                                <div id="form7" class="accordion-collapse collapse" data-bs-parent="#formAccordion">
+                                    <div class="accordion-body">
+                                        <div id="langues"></div>
+                                        <button type="button" class="btn btn-primary" id="add-languages">Ajouter une langue</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+    
+                <!-- Colonne de prévisualisation -->
+                <div class="col-md-6 justify-content-center text-start colonne1">
+                    <!-- <h2>Prévisualisation</h2>
+                    <div  class="cv-container"> -->
+                        <div id="cv-preview"></div>
+                        
+                                <!-- Barre en bas avec bouton -->
+<div class="preview-navbar " >
+    <button id="toggle-carousel" class="toggle-carousel-btn">
+        <i class="bi bi-chevron-up" ></i> Choisir un modèle
+    </button>
+</div>
+
+<!-- Carrousel d'images -->
+<div id="carousel-container" class="carousel-container">
+    <div class="carousel-track">
+        <img src="assets/images/modele1.jpg" class="cv-selector" alt="Modèle 1" data-template="cv-template-1">
+        <img src="assets/images/modele3.jpg" class="cv-selector" alt="Modèle 3" data-template="cv-template-3">
+        <img src="assets/images/modele5.jpg" class="cv-selector" alt="Modèle 5" data-template="cv-template-5">
+    </div>
+</div>
+
+                               <!-- Modèles de CV cachés -->
+
+    
+<div id="cv-templates" style="display: none; " >
+    <!-- Modèle 1 -->
+    <div id="cv-template-1" class="cv-template">
+        <h1 class="cv-title fw-bold fs-1">CV Simple</h1>
+        <div class="cv-container2">
+            <div class="row">
+              <div class="col-md-12 text-center mb-4 head1">
+                <div class="py-2">
+                    <img id="cv-photo" src="assets/images/camera.png" alt="Photo de profil" 
+                                                         style="width: 150px; height: 150px; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="py-5">
+                    <p></p>
+                <p class="text-white"><span id="cv-name"></span>  <span id="cv-email" class="mx-3"></span> | <span id="cv-phone" class="mx-3"></span> | <span id="cv-address" class="mx-3"></span></p>
+                
+                </div>
+                
+              </div>
+            </div>
+        
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-4">
+                  <h2>Profil</h2>
+                    <p id="cv-description">Votre description...</p>
+                </div>
+        
+                <div class="mb-4">
+                  <h2>Expérience professionnelle</h2>
+        
+                  <div class="mb-3">
+                    <p id="cv-experience">Votre expérience...</p>
+                  </div>
+                </div>
+                <div class="mb-4">
+                <h2>Langues</h2>
+                <ul id="cv-languages"></ul>
+                </div>
+              </div>
+            
+        
+              <div class="left col-md-6">
+                <div class="mb-4">
+                  <h2>Informations personnelles</h2>
+                  <table style="width: 100%; border-collapse: separate; border-spacing: 10px 15px;">
+                    
+                    <tr class="fs-5">
+                        <td><strong>Âge</strong></td>
+                        <td><span id="cv-age"></span> ans</td>
+                    </tr>
+                    <tr class="fs-5">
+                        <td><strong>Poste</strong></td>
+                        <td><span id="cv-poste"></span></td>
+                    </tr>
+                    <tr class="fs-5">
+                        <td><strong>Situation Actuelle</strong></td>
+                        <td><span id="cv-status">situation actuelle</span></td>
+                    </tr>
+                   
+                    <tr class="fs-5">
+                        <td><strong>Sexe</strong></td>
+                        <td><span id="cv-gender">Sexe</span></td>
+                    </tr>
+                </table>
+            </div>
+        
+                <div class="mb-4">
+                  <h2>Formation</h2>
+                  <div class="mb-3">
+                    <p id="cv-education">Votre formation...</p>
+                  </div>
+                </div>
+        
+                <div class="mb-4">
+                  <h2>Compétences</h2>
+                  <ul id="cv-skills"></ul>
+                </div>
+
+                <div class="mb-4">
+                    <h2>Loisirs</h2>
+                    <ul id="cv-hobbies"></ul>
+                </div>
+
+                  <div class="mb-4">
+                    <h2>Références</h2>
+                    <ul id="cv-references"></ul>
+                  </div>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    
+
+
+    <!-- modele 3 -->
+    <div id="cv-template-3" class="cv-template">
+        <h1 class="cv-title fw-bold fs-1">CV Elegant</h1>
+        <div class="cv-container">
+            <!-- HEADER -->
+            <div class="d-flex header">
+        
+                <div class="align-items-center justify-content-center mx-3">
+                    <img id="cv-photo" src="assets/images/camera.png" alt="Photo de profil">
+                </div>
+                <div>
+                    <h1><span id="cv-name"></span></h1>
+                <div class="contact-info d-flex">
+                    <p class=" mx-1"> ✉️ <span id="cv-email"></span>  |</p>
+                    <p class=" mx-1"> 📞 <span id="cv-phone"></span>  |</p>
+                    <p class=" mx-1">📍 <span id="cv-address"></span>  |</p>
+                    <p class=" mx-1"> ✉️ <span id="cv-gender"></span></p>
+                </div>
+                <div class="contact-info d-flex ">
+                    <p class=" mx-3"><span id="cv-age"></span> ans </p>
+                    <p class=" mx-3"><span id="cv-poste"></span> </p>
+                    <p class=" mx-3"><span id="cv-status"></span> </p>
+                </div>
+                </div>
+                
+            </div>
+        
+            <div class="row">
+                <!-- Colonne Gauche -->
+                <div class="col-md-4 left-section cv-section">
+                    <h3 class="mt-5">COMPÉTENCES</h3>
+                    <ul id="cv-skills">
+                        
+                    </ul>
+        
+                    <h3 class="mt-5">LOISIRS</h3>
+                    <ul id="cv-hobbies"></ul>
+                        
+                    </ul>
+
+                    <h3 class="mt-5">REFERENCES</h3>
+                    <ul id="cv-references"></ul>
+                        
+                    </ul>
+
+                    <h3 class="mt-5">LANGUES</h3>
+                    <ul id="cv-languages" ></ul>
+                        
+                    </ul>
+                </div>
+        
+                <!-- Colonne Droite -->
+                <div class="col-md-8 right-section cv-section">
+                    <div class="section-title">PROFIL</div>
+                    <p id="cv-description">Votre description...</p>
+
+                    <div class="section-title">FORMATION</div>
+                    <p id="cv-education">Votre formation...</p>
+        
+                    <div class="section-title">EXPÉRIENCE PROFESSIONNELLE</div>
+                    
+                    <p id="cv-experience">Votre expérience...</p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <!-- modele 2 -->
+    <div id="cv-template-2" class="cv-template">
+        <h1 class="cv-title text-center">CV Professionnel</h1>
+        <div class="cv-container3">
+            <!-- Colonne Gauche -->
+            <div class="left-section3">
+                <img src="profile.jpg" alt="Photo de profil">
+                <h2><span id="cv-name"></span></h2>
+                <p><span id="cv-poste"></span></p>
+        
+                <h3>Informations personnelles</h3>
+                <p>📧 <span id="cv-email"></span></p>
+                <p>📞 <span id="cv-phone"></span></p>
+                <p>📍 <span id="cv-address"></span></p>
+                <p><span id="cv-gender"></span></p>
+                <p><span id="cv-poste"></span></p>
+                <p><span id="cv-age"></span></p>
+        
+                <h3>Compétences</h3>
+                <div class="competence-item">
+                    <ul id="cv-skills">
+                </div>
+        
+                <h3>LANGUES</h3>
+                <div class="competence-item">
+                    <ul id="cv-languages">
+                </div>
+                
+            </div>
+        
+            <!-- Colonne Droite -->
+            <div class="right-section3">
+                <div class="section-title">Profil</div>
+                <p><span id="cv-description"></span></p>
+        
+                <div class="section-title">Expérience professionnelle</div>
+        
+                    <p id="cv-experience">Votre expérience...</p>
+                
+        
+                <div class="section-title">Références</div>
+                <ul id="cv-references"></ul>
+        
+                <div class="section-title">Loisirs</div>
+                <ul id="cv-hobbies">
+            </div>
+        </div>
+    </div>
+
+     <!-- Modèle 4 -->
+    <div id="cv-template-4" class="cv-template">
+        <div class="container mt-5">
+            <div class="row">
+              <div class="col-md-8 offset-md-2">
+                <h1 class="text-center mb-4"><span  id="cv-name"></span></h1>
+        
+                <section class="mb-4">
+                  <h2>Informations personnelles</h2>
+                  <div class="container mt-5">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <table class="custom-table">
+                                <tr class="fs-5">
+                                    <td><strong>Âge</strong></td>
+                                    <td><span id="cv-age"></span></td>
+                                </tr>
+                                <tr class="fs-5">
+                                    <td><strong>Poste</strong></td>
+                                    <td><span id="cv-poste"></span></td>
+                                </tr>
+                                <tr class="fs-5">
+                                    <td><strong>Situation Actuelle</strong></td>
+                                    <td><span id="cv-status">situation actuelle</span></td>
+                                </tr>
+                                <tr class="fs-5">
+                                    <td><strong>Adresse e-mail</strong></td>
+                                    <td><span id="cv-email"></span></td>
+                                </tr>
+                                <tr class="fs-5">
+                                    <td><strong>Numéro de téléphone</strong></td>
+                                    <td><span id="cv-phone"></span></td>
+                                </tr>
+                                <tr class="fs-5">
+                                    <td><strong>Adresse</strong></td>
+                                    <td><span id="cv-address">Votre adresse</span></td>
+                                </tr>
+                                <tr class="fs-5">
+                                    <td><strong>Sexe</strong></td>
+                                    <td><span id="cv-gender">Sexe</span></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <img id="cv-photo" src="assets/images/camera.png" alt="Photo de profil" 
+                                 style="width: 150px; height: 150px; object-fit: cover; border-radius: 10px;">
+                        </div>
+                        <div class="col-md-4">
+                            </div>
+                    </div>
+                </div>
+                </section>
+        
+                <section class="mb-4">
+                  <h2>Profil</h2>
+                  <p id="cv-description">Votre description...</p>
+                                </section>
+        
+                <section class="mb-4">
+                  <h2>Expérience professionnelle</h2>
+        
+                  <div class="mb-3">
+                    <p id="cv-experience">Votre expérience...</p>
+                  </div>
+
+                </section>
+        
+                <div class="cv-section">
+                  <h2>Références</h2>
+                  <ul id="cv-references"></ul>
+                </div>
+        
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <!-- modele 5 -->
+    <div id="cv-template-5" class="cv-template">
+    <h1 class="cv-title fw-bold fs-1">Curriculum vitae</h1>
+
+    <div class="cv-section1">
+        <h2 class="fw-bold">Informations personnelles</h2>
+        <div class="cv-info d-flex">
+
+            <table style="width: 100%; border-collapse: separate; border-spacing: 10px 15px;">
+                <tr class="fs-5">
+                    <td ><strong>Nom</strong></td>
+                    <td><span id="cv-name"></span></td>
+                    <td rowspan="8" style="text-align: center; vertical-align: middle;">
+                        <img id="cv-photo" src="assets/images/camera.png" alt="Photo de profil" 
+                             style="width: 150px; height: 150px; object-fit: cover; border-radius: 10px;">
+                    </td>
+                </tr>
+                <tr class="fs-5">
+                    <td><strong>Âge</strong></td>
+                    <td><span id="cv-age"></span></td>
+                </tr>
+                <tr class="fs-5">
+                    <td><strong>Poste</strong></td>
+                    <td><span id="cv-poste"></span></td>
+                </tr>
+                <tr class="fs-5">
+                    <td><strong>Situation Actuelle</strong></td>
+                    <td><span id="cv-status">situation actuelle</span></td>
+                </tr>
+                <tr class="fs-5">
+                    <td><strong>Adresse e-mail</strong></td>
+                    <td><span id="cv-email"></span></td>
+                </tr>
+                <tr class="fs-5">
+                    <td><strong>Numéro de téléphone</strong></td>
+                    <td><span id="cv-phone"></span></td>
+                </tr>
+                <tr class="fs-5">
+                    <td><strong>Adresse</strong></td>
+                    <td><span id="cv-address">Votre adresse</span></td>
+                </tr>
+                <tr class="fs-5">
+                    <td><strong>Sexe</strong></td>
+                    <td><span id="cv-gender">Sexe</span></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="cv-section">
+        <h2 class="fw-bold ">Profil</h2>
+        <p id="cv-description">Votre description...</p>
+    </div>
+
+    <div class="cv-section">
+        <h2 class="fw-bold">Formation</h2>
+        <p id="cv-education">Votre formation...</p>
+    </div>
+
+    <div class="cv-section">
+        <h2 class="fw-bold ">Expérience professionnelle</h2>
+        <p id="cv-experience">Votre expérience...</p>
+    </div>
+
+    <div class="cv-section">
+        <h2 class="fw-bold">Compétences</h2>
+        <ul id="cv-skills"></ul>
+    </div>
+    
+    <div class="cv-section">
+        <h2 class="fw-bold">Loisirs</h2>
+        <ul id="cv-hobbies"></ul>
+    </div>
+    
+    <div class="cv-section">
+        <h2 class="fw-bold">Références</h2>
+        <ul id="cv-references"></ul>
+    </div>
+    
+    <div class="cv-section">
+        <h2 class="fw-bold">Langues</h2>
+        <ul id="cv-languages"></ul>
+    </div>
+</div>
+     </div>
+    
+</div>
+                        
+</div>
+ 
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script src="js/cv.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

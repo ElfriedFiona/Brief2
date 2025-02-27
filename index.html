@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    
+    <header class="header">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+            <div class="container-fluid ">
+              <a class="navbar-brand ms-3" href="index.html">
+                <img src="assets/images/logo.png" alt="Logo" width="100" height="100" class="d-inline-block">WebNova
+            </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav  mx-auto mb-2 mb-lg-0 text-center fs-4  " >
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link ms-3" href="modele_cv.html">Modele de CV</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link ms-3" href="prix.html">Prix</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link ms-3" href="faq.html">FAQ</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link ms-3" href="contact.html">Contact</a>
+                  </li>
+                </ul>
+                <div class="d-flex" >
+                    <button class="btn bg-white  p-3 fs-4" type="submit">Connexion</button>
+                  <button class="btn bg-primary text-white  mx-3 p-3 fs-4" type="submit" onclick="window.location.href='cv.html'">Créer un CV</button>
+                </div>
+              </div>
+            </div>
+          </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container-fluid bg-body-tertiary text-center py-5">
+            <div class="row justify-content-center align-items-center">
+                <!-- Colonne gauche (Images) -->
+                <div class="col-md-6 text-center">
+                    <div >
+                        <img src="assets/images/accueil0.jpg" style="max-width: 100%; height: auto; width: 500px;" >
+                    </div>
+                </div><br>
+    
+                <!-- Colonne droite (Texte) -->
+                <div class="col-md-6  justify-content-center text-start  ">
+                    <h1 class="fw-bold ">Créez un CV en toute <br> Simplicité</h1>
+                    <p >Remplissez vos coordonnées, sélectionnez un modèle, téléchargez votre <br> CV et impressionnez les employeurs.</p>
+                    <button class="btn bg-primary text-white  p-3 fs-4" type="submit" onclick="window.location.href='cv.html'">Créer un CV</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="fonctionnement">
+        <h1 class="justify-content-center text-center mt-5">Comment cela Fonctionne t-il ?</h1>
+    
+        <div class="container-fluid text-center py-5 mt-2">
+            <div class="row justify-content-center align-items-center">
+                
+                <!-- Étape 1 -->
+                <div class="col-md-4 d-flex text-center align-items-center step" data-step="1">
+                    <div class="numéro-container">
+                        <div class="numéro">
+                            <p class="text-black">1</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>Complétez les détails</h3>
+                        <p>Remplissez les sections  pertinentes  de votre CV.</p>
+                    </div>
+                </div>
+    
+                <!-- Étape 2 -->
+                <div class="col-md-4 d-flex text-center align-items-center step" data-step="2">
+                    <div class="numéro-container">
+                        <div class="numéro">
+                            <p class="text-black">2</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>Sélectionnez un modèle</h3>
+                        <p>Choisissez un modèle et  personnalisez votre CV.</p>
+                    </div>
+                </div>
+    
+                <!-- Étape 3 -->
+                <div class="col-md-4 d-flex text-center align-items-center step" data-step="3">
+                    <div class="numéro-container">
+                        <div class="numéro">
+                            <p class="text-black">3</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>Téléchargez le CV</h3>
+                        <p>Téléchargez votre CV et modifiez-le quand vous le souhaitez.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Conteneur de l'image qui change automatiquement -->
+            <div class="step-image-container">
+                <img src="" class="step-image" alt="Illustration" id="stepImage">
+            </div>
+    
+        </div>
+    </section>
+    
+    <section class="evaluation" id="avis">
+        <div class="container-fluid bg-black mt-3">
+            <h1 class="justify-content-center text-center py-5 text-white">EVALUATIONS</h1>
+            <p class="justify-content-center text-center  text-white">4,5/5</p>
+            <p class="justify-content-center text-center  text-white">Basé sur 6 avis</p>
+            <div id="carouselExampleInterval" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-inner py-5">
+                  <div class="carousel-item active" data-bs-interval="5000">
+                    <img src="assets/images/evaluation1.jpg" class="d-block w-50" alt="...">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="2000">
+                    <img src="assets/images/evaluation2.jpg" class="d-block w-50" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/images/evaluation3.jpg" class="d-block w-50" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/images/evaluation4.jpg" class="d-block w-50" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/images/evaluation5.jpg" class="d-block w-50" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/images/evaluation6.jpg" class="d-block w-50" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+          </div>
+    </section>
+
+    <section class="FAQ">
+        <h1 class="text-center py-5 text-black">FAQ</h1>
+        <div class="container">
+            <div class="accordion" id="faqAccordion">
+                <!-- Question 1 -->
+                <div class="accordion-item border-top">
+                    <h2 class="accordion-header d-flex justify-content-between align-items-center">
+                        <button class="accordion-button collapsed w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            Qu'est-ce qu'un CV ?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Vous cherchez un nouvel emploi ? Un CV est alors indispensable. L'abréviation CV correspond au mot latin curriculum vitae et signifie "histoire de la vie". Un CV permet à un recruteur ou à un employeur de voir quel parcours professionnel vous avez suivi. Un CV consiste en un aperçu structuré de votre formation, de vos diplômes et de votre expérience professionnelle, complété par des informations personnelles telles que vos coordonnées, vos caractéristiques, vos compétences et autres qualités importantes. Tout comme la lettre de motivation, le CV professionnel est un élément important de votre recherche d'un nouvel emploi.
+<br>
+Vous aurez besoin d'un CV si vous souhaitez postuler à un emploi. Sur la base de votre curriculum vitae, un recruteur décidera si vous serez convié à un entretien d'embauche. Le temps passé par un recruteur sur un CV est très court, c'est pourquoi votre CV doit donner un bon aperçu de vos connaissances et compétences. Avez-vous les qualifications requises pour le poste ? Avez-vous l'expérience professionnelle requise ? Et votre profil correspond-il au poste vacant ? Les réponses à ces questions doivent figurer dans votre CV.
+<br>
+Avec un CV, vous mettez en avant vos qualités et compétences dans le but de vous vendre comme le candidat idéal pour le poste. Que vous soyez à la recherche d'un emploi permanent, d'un travail d'appoint ou d'un stage, un bon CV est nécessaire pour avoir une chance de décrocher l'emploi de vos rêves. Pour rivaliser avec les autres candidats, votre CV doit se démarquer. La réussite d'une candidature dépend d'un CV percutant et bien conçu. Choisissez donc une mise en page professionnelle, un format lisible et maintenez votre CV à jour.
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Question 2 -->
+                <div class="accordion-item border-top">
+                    <h2 class="accordion-header d-flex justify-content-between align-items-center">
+                        <button class="accordion-button collapsed w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            Que contient un CV ?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            <p class="fw-bold fs-4">Données personnelles et informations de contact</p>
+
+                            Quel que soit le secteur d'activité dans lequel vous évoluez, les détails personnels sont essentiels sur un CV. Indiquez toujours votre nom, votre adresse, votre numéro de téléphone, votre adresse mail et votre date de naissance. Parmi les autres informations susceptibles d'être pertinentes figurent l'état civil, le sexe, la nationalité, le permis de conduire, les liens vers un site web ou des comptes de médias sociaux, ainsi qu'une photo professionnelle.
+        <p class="fw-bold fs-4">Profil personnel</p>
+
+        Inclure un profil personnel dans son CV présente plusieurs avantages : c'est un moyen idéal de se démarquer des autres candidats. Vous donnez également une touche personnelle à votre CV avec ce court texte dans lequel vous vous présentez. Résumée en quelques phrases, elle permet au lecteur du CV de savoir quel genre de personne vous êtes, comment vous travaillez et quels sont vos points forts. Le profil personnel se termine par vos ambitions et une description du type d'emploi que vous recherchez. L'objectif de cette introduction est d'attirer l'attention du recruteur pour qu'il ait envie de lire l'intégralité de votre CV. Assurez-vous que votre texte de profil est accrocheur et percutant et qu'il est adapté à l'offre d'emploi.
+
+
+        <p class="fw-bold fs-4">Expériences professionnelles</p>
+
+        Votre expérience professionnelle, ainsi que votre formation, constituent le cœur de votre CV. Il est important pour les recruteurs et les employeurs de se faire une idée précise de votre parcours, de vos connaissances et du travail que vous avez accompli. Utilisez des exemples concrets pour chaque emploi que vous avez occupé et nommez les emplois les plus pertinents pour le poste auquel vous postulez. Vous venez de commencer à travailler ou vous n'avez pas encore d'expérience professionnelle ? Incluez les emplois secondaires, le travail bénévole et les projets d'études comme expérience professionnelle dans votre CV.
+
+        <p class="fw-bold fs-4">Formation</p>
+
+        Un bon CV contient toujours un résumé de vos études et de vos diplômes. Ces informations donnent au recruteur ou à l'employeur une idée de votre niveau d’études, de réflexion et de travail. Il est également important de savoir que le niveau d’études atteint peut avoir une incidence sur votre salaire. Placez toujours votre formation ou vos études les plus récentes en tête de liste et remontez dans le temps.
+
+        <p class="fw-bold fs-4">Compétences et qualités</p>
+
+        Les employeurs examinent de plus en plus la section "compétences et qualités" d'un CV. Ce sont les qualités qui montrent ce que vous pouvez faire et comment vous vous distinguez des autres candidats. La liste des compétences et des qualités doit toujours être adaptée aux exigences mentionnées dans l'offre d'emploi. Pensez à des qualités de management, à la connaissance de certains logiciels ou à de bonnes capacités d'analyse. Utilisez autant que possible vos propres mots, donnez des exemples concrets et évitez les termes fréquemment utilisés tels que "esprit d'équipe" et "touche-à-tout".
+
+        <p class="fw-bold fs-4">Langues</p>
+
+        La connaissance des langues peut constituer un atout majeur sur votre CV et rendre votre candidature unique. Si vous parlez d'autres langues que le français, comme l'anglais, l'allemand, le néerlandais, l'espagnol, le russe ou le japonais, mentionnez ces langues dans votre curriculum vitae. En nommant les langues que vous maîtrisez, vous montrez que vous êtes à l'aise sur différents marchés et que vous êtes polyvalent. Une raison supplémentaire d'être invité à un entretien d'embauche !
+
+        <p class="fw-bold fs-4">Passe-temps et centres d’intérêt</p>
+
+        Au cours de la procédure de candidature, il s'agit de se présenter sous son meilleur jour. Sortez du lot et laissez votre personnalité parler d'elle-même : parlez aux recruteurs de vos passions, passe-temps et centres d’intérêt, en veillant à ce qu'ils soient précis et répondent à la question de savoir pourquoi vous êtes fait pour le poste.
+
+        <p class="fw-bold fs-4">Activités extra-professionnelles</p>
+
+        Mentionner vos activités annexes peut vous donner un avantage sur les autres candidats. Pour mener à bien des activités annexes, il faut avoir certaines qualités. En mentionnant les activités annexes sur votre CV, vous mettez vos qualités en avant. Qui sait si un employeur attachera de la valeur à ces qualités et vous donnera le petit coup de pouce nécessaire pour être invité à un entretien. Cependant, il est important de ne mentionner que les activités annexes qui ont une valeur ajoutée pour votre candidature.
+
+        <p class="fw-bold fs-4">Cours</p>
+
+        Les cours, les formations ou les ateliers élargissent vos connaissances et votre champ d'action. Ils vous permettent d'acquérir de nouvelles compétences et montrent que vous êtes prêt à apprendre de nouvelles choses. Que vous ayez beaucoup ou peu d'expérience professionnelle, suivre des cours enrichira votre CV. Les cours, les Masterclass et les certificats montrent à un employeur que vous avez les connaissances et les compétences requises.
+
+        <p class="fw-bold fs-4">Stages</p>
+
+        Les stages sont considérés comme une expérience professionnelle et constituent un élément important de nombreux CV, surtout si vous avez peu ou pas d'expérience professionnelle. Les stages permettent d'acquérir des compétences variées et des connaissances pratiques que l'on ne trouve pas dans les manuels scolaires. Ne mentionnez que les stages qui apportent une valeur ajoutée et sont pertinents pour le poste auquel vous postulez.
+
+        <p class="fw-bold fs-4">Réalisations</p>
+
+        La liste de vos réalisations sur votre CV peut vous donner un avantage concurrentiel important par rapport aux autres candidats. Si, en tant que candidat, vous pouvez mettre en avant vos aptitudes, vos compétences et votre expérience en mentionnant des réalisations, vous augmenterez vos chances d'obtenir un entretien. En mentionnant les réalisations, vous montrez ce que vous avez accompli dans votre carrière.
+
+        <p class="fw-bold fs-4">Références</p>
+
+        Une référence est un témoignage d'un ancien employeur sur vos performances et votre personnalité. Utile aux futurs employeurs pour vérifier les informations figurant sur votre CV, en apprendre davantage sur vous en tant que collègue et savoir comment c'est de travailler avec vous. Si vous choisissez d'inclure des références dans votre CV, vous ne pouvez le faire que si vous avez demandé la permission à la personne concernée.
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Question 3 -->
+                <div class="accordion-item border-top">
+                    <h2 class="accordion-header d-flex justify-content-between align-items-center">
+                        <button class="accordion-button collapsed w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            Comment faire un CV ?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Vous avez trouvé une offre d'emploi intéressante ? Il est alors temps de postuler et d'envoyer votre CV au recruteur. En une ou deux pages, vous montrez par votre expérience, votre formation et vos compétences que vous êtes le candidat idéal pour le poste. Avec un bon CV, vous augmentez vos chances d'être invité à un entretien.
+<br>
+                            Vous pouvez créer un CV dans des programmes de traitement de texte tels que Word. Voulez-vous vraiment vous démarquer avec un CV solide et professionnel ? Créez ensuite votre CV en quelques étapes avec le générateur de CV en ligne de CVwizard. Vous remplissez vos données personnelles, ajoutez des informations pertinentes, choisissez un <a href="modele.html">modèle de CV</a> approprié et votre CV est prêt !
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Question 4 -->
+                <div class="accordion-item border-top">
+                    <h2 class="accordion-header d-flex justify-content-between align-items-center">
+                        <button class="accordion-button collapsed w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                            Quels sont les avantages d'utiliser un générateur de CV ?
+                        </button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Créer son CV sur un générateur de CV tel que CVWebNova offre plusieurs avantages :
+                            <ul>
+                                <li>Les rubriques de votre CV sont déjà créées et vous n’avez qu’à remplir les champs concernés</li>
+                                <li>Créer son CV sur un générateur est plus rapide que sur un logiciel de traitement de texte</li>
+                                <li>Vous pouvez ajouter ou retirer certaines rubriques</li>
+                                <li>La mise en page est automatique : vous n’avez qu’à choisir un modèle pour qu’il devienne la présentation de votre CV</li>
+                                <li>Un PDF de votre CV est automatiquement créé à la fin du processus de rédaction</li>
+                                L'utilisation d'un CV designer simplifie le processus de création d'un CV professionnel et soigné, vous permettant d'entrer vos détails dans des modèles prédéfinis avec facilité. De plus, un CV designer fournit les outils et les conseils nécessaires pour adapter votre CV à différentes candidatures, garantissant que vos compétences et expériences sont présentées de la manière la plus efficace possible.
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Lien vers FAQ -->
+                <div class="text-center mt-4">
+                    <p>Vous avez des questions ? Consultez notre <a href="faq.html">FAQ</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section>
+        <footer class="py-5 bg-body-tertiary">
+            <div class="container">
+                <div class="row text-center text-md-start">
+                    <!-- Logo -->
+                    <div class="col-md-3 mb-4">
+                        <a class="nav-link d-flex align-items-center" href="index.html">
+                            <img src="assets/images/logo.png" alt="Logo" width="100" height="100" class="me-2">
+                            <span class="fw-bold fs-4">WebNova</span>
+                        </a>
+                    </div>
+    
+                    <!-- Ressources -->
+                    <div class="col-md-3 mb-4">
+                        <h3 class="fw-bold">Ressources</h3>
+                        <a class="nav-link" href="modele.html">Exemples de CV</a>
+                        <a class="nav-link" href="#">Articles</a>
+                    </div>
+    
+                    <!-- Produit -->
+                    <div class="col-md-3 mb-4">
+                        <h3 class="fw-bold">Produit</h3>
+                        <a class="nav-link" href="prix.html">Prix</a>
+                        <a class="nav-link" href="modele.html">Modèles de CV</a>
+                        <a class="nav-link" href="#avis">Avis</a>
+                    </div>
+    
+                    <!-- Service client -->
+                    <div class="col-md-3 mb-4">
+                        <h3 class="fw-bold">Service client</h3>
+                        <a class="nav-link" href="faq.html">FAQ</a>
+                        <a class="nav-link" href="contact.html">Contact</a>
+                        <a class="nav-link" href="#">Politique de confidentialité</a>
+                        <a class="nav-link" href="#">Conditions générales</a>
+                        <a class="nav-link" href="#">Directives éditoriales</a>
+                    </div>
+                </div>
+    
+                <!-- Réseaux sociaux -->
+                <div class="text-center mt-4">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <a href="#" class="text-dark fs-3"><i class="bi bi-facebook"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" class="text-dark fs-3"><i class="bi bi-twitter-x"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" class="text-dark fs-3"><i class="bi bi-linkedin"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" class="text-dark fs-3"><i class="bi bi-youtube"></i></a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <!-- Copyright -->
+                <p class="text-center mt-3">© 2025 CVWebNova</p>
+            </div>
+        </footer>
+    </section>
+    
+    
+    <script src="js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
