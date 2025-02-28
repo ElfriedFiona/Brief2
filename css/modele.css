@@ -1,4 +1,16 @@
 
+.btn {
+  border-radius: 50px;
+}
+.btn .bg-primary {
+  --bs-bg-opacity: 100;
+  background-color: #287eb8;
+  margin-right: 10rem;
+}
+  .hero{
+    padding-top: 125px;
+  }
+
   .hero-content {
     max-width: 1400px;
     margin: 0 auto;

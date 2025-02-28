@@ -370,7 +370,12 @@ function updatePreview() {
 
     preview.innerHTML = "";
     const templateElement = document.getElementById(selectedTemplate).cloneNode(true);
-    templateElement.style.display = "block";
+        if (!templateElement) {
+            console.error("Modèle introuvable :", selectedTemplate);
+            preview.innerHTML = "<p>Modèle introuvable.</p>";
+            return;
+        }
+        templateElement.style.display = "block";
 
     templateElement.querySelector("#cv-name").textContent = document.getElementById("cv-name").textContent;
     templateElement.querySelector("#cv-age").textContent = document.getElementById("cv-age").textContent;
@@ -405,7 +410,7 @@ function updatePreview() {
 const templates = document.querySelectorAll(".cv-selector");
 const preview = document.getElementById("cv-preview");
 
-let defaultTemplate = "cv-template-1"; // Définir un modèle par défaut
+let defaultTemplate = "cv-template-5"; // Définir un modèle par défaut
 let selectedTemplate = localStorage.getItem("selectedTemplate") || defaultTemplate; // Charger ou utiliser le modèle par défaut
 
 templates.forEach(template => {
@@ -488,15 +493,15 @@ updatePreview();
 
 document.addEventListener("DOMContentLoaded", function() {
     function updateField(inputId, outputId) {
-    const inputElement = document.getElementById(inputId);
-    const outputElement = document.getElementById(outputId);   
-    
+        const inputElement = document.getElementById(inputId);
+        const outputElement = document.getElementById(outputId);
+
         if (localStorage.getItem(inputId)) {
             inputElement.value = localStorage.getItem(inputId);
             outputElement.textContent = localStorage.getItem(inputId);
         }
-    
-        inputElement.addEventListener("input", function() {
+
+        inputElement.addEventListener("input", function () {
             outputElement.textContent = this.value;
             localStorage.setItem(inputId, this.value);
         });
@@ -506,13 +511,14 @@ document.addEventListener("DOMContentLoaded", function() {
         const firstName = document.getElementById("firstName").value;
         const lastName = document.getElementById("lastName").value;
         const fullName = firstName + " " + lastName;
-    
+
         document.getElementById("cv-name").textContent = fullName;
         localStorage.setItem("firstName", firstName);
         localStorage.setItem("lastName", lastName);
     }
-    
-    if (localStorage.getItem("firstName")) {document.getElementById("firstName").value = localStorage.getItem("firstName");
+
+    if (localStorage.getItem("firstName")) {
+        document.getElementById("firstName").value = localStorage.getItem("firstName");
     }
     if (localStorage.getItem("lastName")) {
         document.getElementById("lastName").value = localStorage.getItem("lastName");
@@ -539,7 +545,7 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("cv-gender").textContent = radio.value;
         }
 
-        radio.addEventListener("change", function() {
+        radio.addEventListener("change", function () {
             document.getElementById("cv-gender").textContent = this.value;
             localStorage.setItem("gender", this.value);
         });
@@ -550,11 +556,11 @@ document.addEventListener("DOMContentLoaded", function() {
     const imageMessage = document.getElementById("imageMessage");
     const resetImageButton = document.getElementById("resetImage");
 
-    profilePicInput.addEventListener("change", function(event) {
+    profilePicInput.addEventListener("change", function (event) {
         const file = event.target.files[0];
         if (file) {
             const reader = new FileReader();
-            reader.onload = function(e) {
+            reader.onload = function (e) {
                 profilePicPreview.src = e.target.result;
                 localStorage.setItem("profilePic", e.target.result);
                 imageMessage.textContent = "✔ Image enregistrée";
@@ -568,29 +574,20 @@ document.addEventListener("DOMContentLoaded", function() {
         imageMessage.textContent = "✔ Image enregistrée";
     }
 
-    resetImageButton.addEventListener("click", function() {
+    resetImageButton.addEventListener("click", function () {
         localStorage.removeItem("profilePic");
         profilePicPreview.src = "";
         imageMessage.textContent = "❌ Image supprimée";
     });
+
+    document.getElementById("toggle-carousel").addEventListener("click", function () {
+        let carousel = document.getElementById("carousel-container");
+        if (carousel.style.display === "flex") {
+            carousel.style.display = "none";
+        } else {
+            carousel.style.display = "flex";
+        }
+    });
+
+    updatePreview();
 });
-
-document.getElementById("toggle-carousel").addEventListener("click", function () {
-    let carousel = document.getElementById("carousel-container");
-    if (carousel.style.display === "flex") {
-        carousel.style.display = "none";
-    } else {
-        carousel.style.display = "flex";
-    }
-});
-
-
-
-
-
-
-
-
-
-
-
